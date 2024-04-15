@@ -10,6 +10,7 @@ function Sending() {
   const [allText, setallText] = useState<string[]>([]);
   const [allMedia, setAllMedia] = useState<(File | null)[]>([]);
   const [loading, setLoading] = useState(false);
+  const [passcode, setpasscode] = useState("");
   const handleAddToQueue = () => {
     if (text == "") {
       return;
@@ -43,8 +44,11 @@ function Sending() {
         }
       }
       setLoading(true);
-      const response = await httprequest.post("/parcel", formdata);
-      console.log(response, "good");
+      const { data } = await httprequest.post("/parcel", formdata);
+      console.log(data, "good");
+      setpasscode(data.data.passcode);
+
+      // SHOW PASSKEY
     } catch (err) {
       console.log(err);
     } finally {
@@ -53,6 +57,11 @@ function Sending() {
   };
   return (
     <main className="main">
+      {passcode && (
+        <div className="info">
+          <p className="info__text">Your passkey is {passcode}</p>
+        </div>
+      )}
       <div className="sendingarea dropareabackground">
         <div className="sendinggroup">
           <div className="sendingdiv">

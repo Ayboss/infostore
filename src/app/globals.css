@@ -160,3 +160,15 @@ a {
 .err {
   color: red;
 }
+.info {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background-color: #17a2b8;
+  width: 70%;
+  padding: 20px;
+  font-size: 20px;
+  color: #f8f9fa;
+  border-radius: 5px;
+}
