@@ -18,7 +18,7 @@ function Receiving({ setStep, parcelinfo }: any) {
 
         <div className="dropboxarea ">
           <ul className="dropboxlist">
-            {parcelinfo.text.map((txt: string) => (
+            {parcelinfo?.text?.map((txt: string) => (
               <li className="dropboxitem">
                 <Image src={textimg} alt="file" className="dropboxitem__img" />
                 <span className="dropboxitem__span">{txt}</span>
@@ -31,7 +31,7 @@ function Receiving({ setStep, parcelinfo }: any) {
                 />
               </li>
             ))}
-            {parcelinfo.media.map((file: string) => (
+            {parcelinfo?.media?.map((file: string) => (
               <li className="dropboxitem">
                 <Image src={fileimg} alt="file" className="dropboxitem__img" />
                 {file && <span className="dropboxitem__span">{file}</span>}

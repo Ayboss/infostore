@@ -28,16 +28,18 @@ a {
   padding: 20px;
 }
 .buttons {
-  display: grid;
-  place-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   gap: 50px;
 }
 .sendbtn {
   border: none;
   padding: 25px;
-  width: 570px;
-  max-width: 100%;
+  max-width: 570px;
+  width: 100%;
   color: white;
   background-color: #cc3b3b;
   cursor: pointer;
@@ -45,8 +47,8 @@ a {
 .receivebtn {
   border: none;
   padding: 25px;
-  width: 570px;
-  max-width: 100%;
+  max-width: 570px;
+  width: 100%;
   color: white;
   background-color: #3e991e;
   cursor: pointer;
@@ -59,6 +61,8 @@ a {
 }
 
 .formgroup {
+  max-width: 570px;
+  width: 100%;
 }
 .label {
   display: block;
@@ -74,6 +78,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 .sendinggroup {
   flex: 1;
@@ -91,7 +97,7 @@ a {
 }
 .dropboxarea {
   flex: 1;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 .dropboxlist {
   margin-top: 30px;
@@ -113,6 +119,8 @@ a {
 }
 .dropboxitem__span {
   flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .sendcontent {
   display: flex;
@@ -171,4 +179,27 @@ a {
   font-size: 20px;
   color: #f8f9fa;
   border-radius: 5px;
+}
+
+@media (max-width: 700px) {
+  .sendcontent {
+    gap: 10px;
+  }
+  .sendinginput {
+    padding: 10px;
+  }
+  .sendingbtn {
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 400px) {
+  .sendcontent {
+    gap: 0px;
+  }
+  .sendinginput {
+    padding: 10px;
+  }
+  .sendingbtn {
+    padding: 10px 15px;
+  }
 }
